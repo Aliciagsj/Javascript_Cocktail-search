@@ -53,11 +53,11 @@ function renderDrink(drinkData) {
     drinkData.strDrinkThumb = `https://via.placeholder.com/210x295/ffffff/666666/?text=drink`;
   }
 
-  const drink = `<li>
-  <article class="drink js-drink-item">
+  const drink = `<li class="drink js-drink-item" id="${drinkData.idDrink}">
+  
   <img class="drink_img" src=${drinkData.strDrinkThumb} alt="Foto de ${drinkData.strDrink}" />
   <p class="drink_descripcion">${drinkData.strDrink}</p>
-  </article></li>`;
+ </li>`;
 
   return drink;
 }
@@ -68,6 +68,11 @@ function renderDrinksList(DrinksDataList) {
   listDrink.innerHTML = "";
   for (const drinkItem of DrinksDataList) {
     listDrink.innerHTML += renderDrink(drinkItem);
+  }
+
+  const liDrink = document.querySelectorAll(".js-drink-item");
+  for (const itemdrink of liDrink) {
+    itemdrink.addEventListener("click", handleClicDrink);
   }
 }
 
@@ -80,22 +85,53 @@ function handleReset(event) {
   inputName.value = "";
 }
 
-searchButton.addEventListener("click", getDrinks);
-resetButton.addEventListener("click", handleReset);
+//Favoritos
 
 /*
+1.Crear el listado de favoritos
+2.Escuchar cuando clico listado un itemDrink
+3.Obtener a que itemDrink le ha clicado (identificador)
+4.Comprobar si exite en el listado de favoritos con el identificador : 
+  * SI EXITE:
+     - Eliminar del listado de favoritos
+     - Quitar la clase de "favorito" en la lista
+     - Volver a pintar el html
+  * NO EXITE: 
+    - Añadir al listado de favoritos
+    - Añadir la clase de "favorito" en la lista
+    - Volver a pintar el html
+*/
 
-//Filtrar por nombre
-function filterDrink(event) {
+function handleClicDrink(event) {
   event.preventDefault();
-  const nameSearchText = inputName.value;
-  listDrink.innerHTML = "";
-  const dataDrinkFiltered = drinkDataList.filter((drink) =>
-    drink.strDrink.includes(nameSearchText)
-  );
-  renderDrinksList(dataDrinkFiltered);
+  //Obtener a que drink le hago clic
+  const liDrink = event.currentTarget;
+  console.log(liDrink.id);
+
+  //compruebo si el drink que recibo por parámetro está en los favoritos
+  const drinkFoundIndex = favorites.findIndex((fav) => {
+    return fav.idDrink === liDrink.id;
+  });
+
+  console.log(`drinkFoundIndex:${drinkFoundIndex}`);
+
+  if (drinkFoundIndex !== -1) {
+    //Está en favoritos
+    //Borrar
+    favorites.splice(drinkFoundIndex, 1);
+  } else {
+    //No está
+    console.log("No está");
+
+    const newDrink = drinkDataList.find((fav) => {
+      return fav.idDrink === liDrink.id;
+    });
+    favorites.push(newDrink);
+  }
+  console.log(`list favorito:${favorites}`);
+  //Pintar el array de favoritos en el html
 }
 
 //Eventos
-searchButton.addEventListener("click", filterDrink);
-*/
+searchButton.addEventListener("click", getDrinks);
+resetButton.addEventListener("click", handleReset);
