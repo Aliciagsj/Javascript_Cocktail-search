@@ -47,8 +47,6 @@ function getDrinks(event) {
   }
 }
 
-searchButton.addEventListener("click", getDrinks);
-
 //Pinta en el HTML cada item de coctel buscado
 function renderDrink(drinkData) {
   if (drinkData.strDrinkThumb === null) {
@@ -56,7 +54,7 @@ function renderDrink(drinkData) {
   }
 
   const drink = `<li>
-  <article>
+  <article class="drink js-drink-item">
   <img class="drink_img" src=${drinkData.strDrinkThumb} alt="Foto de ${drinkData.strDrink}" />
   <p class="drink_descripcion">${drinkData.strDrink}</p>
   </article></li>`;
@@ -72,6 +70,18 @@ function renderDrinksList(DrinksDataList) {
     listDrink.innerHTML += renderDrink(drinkItem);
   }
 }
+
+//Borrar los campos y los datos de la lista de cocteles
+function handleReset(event) {
+  event.preventDefault();
+  drinkDataList = [];
+  listDrink.innerHTML = "";
+  msgErrorSearch.innerHTML = "";
+  inputName.value = "";
+}
+
+searchButton.addEventListener("click", getDrinks);
+resetButton.addEventListener("click", handleReset);
 
 /*
 
