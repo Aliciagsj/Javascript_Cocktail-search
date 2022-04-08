@@ -35,9 +35,12 @@ function getDrinks(event) {
   } else {
     const SERVER_URL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputName.value}`;
 
+    console.log(`serverurl: ${SERVER_URL}`);
+
     fetch(SERVER_URL)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         drinkDataList = data.drinks;
         renderDrinksList(drinkDataList);
       })
@@ -55,8 +58,8 @@ function renderDrink(drinkData) {
 
   const drink = `<li class="drink js-drink-item" id="${drinkData.idDrink}">
   
-  <img class="drink_img" src=${drinkData.strDrinkThumb} alt="Foto de ${drinkData.strDrink}" />
-  <p class="drink_descripcion">${drinkData.strDrink}</p>
+  <img class="drink__img" src=${drinkData.strDrinkThumb} alt="Foto de ${drinkData.strDrink}" />
+  <p class="drink__descripcion">${drinkData.strDrink}</p>
  </li>`;
 
   return drink;
@@ -64,9 +67,10 @@ function renderDrink(drinkData) {
 
 //Pinta en el HTML la lista con todos los item de coctel buscado
 
-function renderDrinksList(DrinksDataList) {
+function renderDrinksList(drinkList) {
   listDrink.innerHTML = "";
-  for (const drinkItem of DrinksDataList) {
+  console.log(drinkList);
+  for (const drinkItem of drinkList) {
     listDrink.innerHTML += renderDrink(drinkItem);
   }
 
@@ -87,6 +91,34 @@ function handleReset(event) {
 
 //Favoritos
 
+//Pinta en el HTML cada item de coctel FAVORITOS
+function renderDrinkFavorite(drinkDataFav) {
+  if (drinkDataFav.strDrinkThumb === null) {
+    drinkDataFav.strDrinkThumb = `https://via.placeholder.com/210x295/ffffff/666666/?text=drink`;
+  }
+
+  const drinkFav = `<li class="drink__fav js-drink-item" id="${drinkDataFav.idDrink}"> 
+  <img class="drink__img" src=${drinkDataFav.strDrinkThumb} alt="Foto de ${drinkDataFav.strDrink}" />
+  <p class="drink__descripcion">${drinkDataFav.strDrink}</p>
+  <i class="drink__delete fa-solid fa-circle-xmark js-delete-fav"></i>
+ </li>`;
+
+  return drinkFav;
+}
+
+//Pinta en el HTML la lista  FAVORITOS
+
+function renderDrinksFavoriteList(listFavorites) {
+  console.log(listFavorites);
+
+  listDrinkFav.innerHTML = "";
+  for (const drinkItemFav of listFavorites) {
+    listDrinkFav.innerHTML += renderDrinkFavorite(drinkItemFav);
+  }
+
+  //Después recorrer la lista para escuchar el evento del delete
+}
+
 /*
 1.Crear el listado de favoritos
 2.Escuchar cuando clico listado un itemDrink
@@ -106,7 +138,7 @@ function handleClicDrink(event) {
   event.preventDefault();
   //Obtener a que drink le hago clic
   const liDrink = event.currentTarget;
-  console.log(liDrink.id);
+  console.log(`Este es el id seleccionado: ${liDrink.id}`);
 
   //compruebo si el drink que recibo por parámetro está en los favoritos
   const drinkFoundIndex = favorites.findIndex((fav) => {
@@ -116,20 +148,25 @@ function handleClicDrink(event) {
   console.log(`drinkFoundIndex:${drinkFoundIndex}`);
 
   if (drinkFoundIndex !== -1) {
-    //Está en favoritos
+    //EXISTE EN FAVORITOS
     //Borrar
     favorites.splice(drinkFoundIndex, 1);
+    //Eliminar clase favorito
+    liDrink.classList.remove("favorite");
   } else {
-    //No está
+    //NO EXISTE EN FAVORITOS
     console.log("No está");
 
     const newDrink = drinkDataList.find((fav) => {
       return fav.idDrink === liDrink.id;
     });
     favorites.push(newDrink);
+    //Añadir clase favorito
+    liDrink.classList.add("favorite");
   }
   console.log(`list favorito:${favorites}`);
   //Pintar el array de favoritos en el html
+  renderDrinksFavoriteList(favorites);
 }
 
 //Eventos
