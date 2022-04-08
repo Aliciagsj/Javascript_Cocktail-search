@@ -1,0 +1,122 @@
+.main {
+  width: 100%;
+  height: 70vh;
+  &__filter {
+    font-family: $font-main;
+    font-size: $Subheadline;
+    text-align: center;
+    color: $c-primary;
+    text-transform: uppercase;
+    width: 100%;
+    margin: 
+    &--title {
+
+    }
+    &--input {
+      width: 18rem;
+      height: 2rem;
+      border: 2px solid $c-success;
+      border-radius: 5%;
+      padding: 2px 5px;
+      
+    }
+
+
+
+  }
+
+  &__btn {
+    height: 1.5rem;
+    width: 6rem;
+    background-color: $c-success;
+    border-radius: 4px;
+    text-align: center;
+    color: $c-light;
+    font-family: $font-main;
+    text-transform: uppercase;
+    border: 0px;
+    align-content: center;
+      
+
+  }
+
+  &__error {
+    font-size: $Fontsize3;
+    color:$c-danger;
+    text-transform: none;
+  }
+
+  
+}
+
+
+.lists{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  align-content: center;
+
+  &__title {
+    color: $c-light;
+    font-size: $Fontsize2;
+    padding: 10px 5px;
+    background-color: $c-secundary;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    align-items: center;
+
+
+  }
+   
+  &__list {
+      
+    width: 70%;
+    justify-content: center;
+  
+
+    &--drink{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 10px 5px;
+
+    }
+
+    
+    &--img{
+      width: 100px;
+      border-radius: 5px;
+      align-items: center;
+      
+    }
+    &--name{
+      width: 100%;
+      text-align: center;
+      padding: 5px 0px;
+      
+    }
+  }
+
+  &__fav {
+    width: 30%;
+    height: 100%;
+  }
+
+  
+
+}
+
+.icon-delete{
+  height: 20px;
+ 
+}
+
+
+.favorite {
+  border: 5px solid gray; 
+
+}

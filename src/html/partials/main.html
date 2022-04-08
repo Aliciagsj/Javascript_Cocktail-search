@@ -1,28 +1,27 @@
-<main class="page__main">
-  <h1 class="title">Buscador de Cócteles</h1>
-
-  <section class="filter">
+<main class="main">
+  <section class="main__filter">
+    <h1 class="main__title">Buscador de Cócteles</h1>
     <form class="js-form">
       <input
-        class="filter__input js-input-name"
+        class="main__filter--input js-input-name"
         type="text"
         id="filter"
         placeholder="Escribe aquí el nombre del cóctel"
       />
-      <button class="btn js-button-search">Buscar</button>
-      <button class="btn js-button-reset">Reset</button>
-      <p class="error js-msg-error"></p>
+      <p class="main__error js-msg-error"></p>
+      <button class="main__btn js-button-search">Buscar</button>
+      <button class="main__btn js-button-reset">Reset</button>
     </form>
   </section>
 
-  <section class="result__drink--fav js-list-favdrinks">
-    <h2>Cócteles favoritos</h2>
-
-    <ul class="list__fav js-list-fav"></ul>
-  </section>
-
-  <section class="result__drink js-list-drinks">
-    <h2>Lista</h2>
-    <ul class="list js-list"></ul>
+  <section class="lists">
+    <article class="lists__fav js-list-favdrinks">
+      <h2 class="lists__title">Cócteles favoritos</h2>
+      <ul class="lists__list--fav js-list-fav"></ul>
+    </article>
+    <article class="lists__list js-list-drinks">
+      <h2 class="lists__title">Lista</h2>
+      <ul class="lists__list js-list"></ul>
+    </article>
   </section>
 </main>

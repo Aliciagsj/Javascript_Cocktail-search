@@ -2,5 +2,66 @@
 $font-main: 'Roboto', sans-serif;
 
 // colors
-$color-bg: #f3f4f5;
-$color-secondary: #999;
+$c-light: white ;
+$c-dark: #333333;
+
+$c-primary: #139dd8;
+$c-secundary: #737682;
+$c-success: #4be26c;
+$c-danger: #c92c4e;
+$c-warning: #f1cc27;
+$c-info: #56d8dc;
+
+
+
+
+
+//Type scale
+
+$Headline: 3rem;
+$Subheadline: 2rem;
+$Fontsize1: 2rem;
+$Fontsize2: 1.5rem;
+$Fontsize3: 1rem;
+$Fontsize4: 0.5rem;
+
+
+
+
+
+
+//weight screens
+$tablet: 768px;
+$computer: 1200px;
+
+
+@mixin tablet {
+    @media all and (min-width: 768px) {
+      @content;
+    }
+  }
+  
+@mixin desktop {
+    @media all and (min-width: 1200px) {
+      @content;
+    }
+  }
+  
+
+
+
+.wrapper {
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 100%;
+  
+    @include tablet {
+      padding: 0 30px;
+    }
+    @include desktop {
+      // padding + desktop min-width
+      max-width: 1260px;
+    }
+  }
+
+  
