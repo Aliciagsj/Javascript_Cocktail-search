@@ -12,12 +12,19 @@ const inputName = document.querySelector(".js-input-name");
 const searchButton = document.querySelector(".js-button-search");
 const resetButton = document.querySelector(".js-button-reset");
 const msgErrorSearch = document.querySelector(".js-msg-error");
-// const drinksListStored = JSON.parse(localStorage.getItem("drinksList"));
 
 let drinkDataList = [];
 let favorites = [];
 
 //FUNCIONES
+
+// Añadimos la informacion al local storage
+function setInLocalStorage() {
+  // stringify me permite transformar a string el array de favoritos
+  const stringFavorites = JSON.stringify(favorites);
+  //añadimos  al localStorage  los datos convertidos en string previamente
+  localStorage.setItem("favorites", stringFavorites);
+}
 
 /*Obtener listado de la busqueda*/
 function getDrinks(event) {
@@ -117,6 +124,9 @@ function renderDrinksFavoriteList(listFavorites) {
   for (const itemdrinkFav of deleteFav) {
     itemdrinkFav.addEventListener("click", handleClicDeleteFav);
   }
+
+  // los datos que me ha dado la API  los guardamos en el loscalStorage
+  setInLocalStorage();
 }
 
 function handleClicDrink(event) {
@@ -182,3 +192,28 @@ function handleReset(event) {
 //EVENTOS
 searchButton.addEventListener("click", getDrinks);
 resetButton.addEventListener("click", handleReset);
+
+//LOCAL STORAGE
+
+// esta función  nos permite buscar en el localStorage si hay información guardada
+// para no hacer petición al servidor cada vez que cargue la página
+function getLocalStorage() {
+  // obtenermos lo que hay en el LS
+  const localStorageFavorites = localStorage.getItem("favorites");
+  // siempre que cojo datos del local storage tengo que comprobar si son válidos
+  // es decir si es la primera vez que entro en la página
+  if (localStorageFavorites === null) {
+    // no tengo datos en el local storage, así que llamo al API
+    getDrinks();
+  } else {
+    // sí tengo datos en el local storage, así lo parseo a un array y
+    const arrayFavorites = JSON.parse(localStorageFavorites);
+    // lo guardo en la variable global de favorites
+    favorites = arrayFavorites;
+    // cada vez que modifico los arrays de palettes o de favorites vuelvo a pintar y a escuchar eventos
+    renderDrinksList(drinkDataList);
+    renderDrinksFavoriteList(favorites);
+  }
+}
+// 1- start app -- Cuando carga la pagina
+getLocalStorage();
