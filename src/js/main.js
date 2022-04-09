@@ -4,8 +4,6 @@ console.log(">> Ready :)");
 
 /* Elementos que usamos en el HTML */
 
-// const drinksContainer = document.querySelector(".js-list-drinks");
-// const drinksfavContainer = document.querySelector(".js-list-favdrinks");
 const listDrink = document.querySelector(".js-list");
 const listDrinkFav = document.querySelector(".js-list-fav");
 const inputName = document.querySelector(".js-input-name");
