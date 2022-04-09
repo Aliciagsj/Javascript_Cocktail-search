@@ -111,8 +111,12 @@
 }
 
 .btn-delete{
-  height: 20px;
-  colore:red;
+  height: 25px;
+  width: 25px;
+  color:$c-dark;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid $c-dark;
  
 }
 
@@ -120,4 +124,8 @@
 .favorite {
   border: 5px solid gray; 
 
+}
+
+.hidden {
+  display:none
 }

@@ -9,6 +9,7 @@ const listDrinkFav = document.querySelector(".js-list-fav");
 const inputName = document.querySelector(".js-input-name");
 const searchButton = document.querySelector(".js-button-search");
 const resetButton = document.querySelector(".js-button-reset");
+const resetButtonFav = document.querySelector(".js-reset-fav");
 const msgErrorSearch = document.querySelector(".js-msg-error");
 
 let drinkDataList = [];
@@ -187,9 +188,20 @@ function handleReset(event) {
   inputName.value = "";
 }
 
+/*Borrar el listado completo de favoritos*/
+
+function ResetListFav(event) {
+  event.preventDefault();
+  favorites.splice(0);
+
+  renderDrinksList(drinkDataList);
+  renderDrinksFavoriteList(favorites);
+}
+
 //EVENTOS
 searchButton.addEventListener("click", getDrinks);
 resetButton.addEventListener("click", handleReset);
+resetButtonFav.addEventListener("click", ResetListFav);
 
 //LOCAL STORAGE
 
