@@ -1,0 +1,34 @@
+.footer{
+    height: auto;
+    background-color: black;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__copy{
+        color: $c-grey-m;
+        font-family: $font-main;
+        font-size: $Fontsize2;
+    }
+
+    &__rrss{
+        color: $c-grey-m;
+
+        &--link{
+            color: $c-grey-m;
+            height: $Fontsize2;            
+        }
+
+        &--icons{
+            padding-left: 0.5rem;
+        }
+
+    }
+
+
+}

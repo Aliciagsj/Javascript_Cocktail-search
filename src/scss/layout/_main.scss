@@ -1,11 +1,11 @@
 .main {
   width: 100%;
-  height: 70vh;
+  height: 100%;
   &__filter {
     font-family: $font-main;
     font-size: $Subheadline;
     text-align: center;
-    color: $c-primary;
+    color: $c-grey-l;
     text-transform: uppercase;
     width: 100%;
     margin: 
@@ -15,7 +15,7 @@
     &--input {
       width: 18rem;
       height: 2rem;
-      border: 2px solid $c-success;
+      border: 2px solid $c-grey-m;
       border-radius: 5%;
       padding: 2px 5px;
       
@@ -28,10 +28,10 @@
   &__btn {
     height: 1.5rem;
     width: 6rem;
-    background-color: $c-success;
+    background-color: $c-grey-m;
     border-radius: 4px;
     text-align: center;
-    color: $c-light;
+    color: $c-grey-l;
     font-family: $font-main;
     text-transform: uppercase;
     border: 0px;
@@ -42,7 +42,7 @@
 
   &__error {
     font-size: $Fontsize3;
-    color:$c-danger;
+    color:$c-grey-m;
     text-transform: none;
   }
 
@@ -58,10 +58,10 @@
   align-content: center;
 
   &__title {
-    color: $c-light;
+    color: $c-grey-l;
     font-size: $Fontsize2;
     padding: 10px 5px;
-    background-color: $c-secundary;
+    background-color: $c-dark;
     width: 100%;
     height: 80px;
     text-align: center;
