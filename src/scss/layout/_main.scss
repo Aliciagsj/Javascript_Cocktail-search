@@ -1,6 +1,21 @@
 .main {
   width: 100%;
   height: 100%;
+  display: grid;
+  grid-template-columns: minmax(200px auto);
+  // grid-template-rows: 1fr 1fr;
+   grid-template-rows: minmax(100px auto);
+  gap:10px;
+  
+
+
+  
+}
+
+
+/*
+
+
   &__filter {
     font-family: $font-main;
     font-size: $Subheadline;
@@ -47,9 +62,6 @@
   }
 
   
-}
-
-
 .lists{
   width: 100%;
   display: flex;
@@ -109,7 +121,7 @@
   
 
 }
-
+*/
 .btn-delete{
   height: 25px;
   width: 25px;

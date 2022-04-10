@@ -1,16 +1,20 @@
-<section class="main__filter">
-  <h1 class="main__title">Buscador de Cócteles</h1>
-  <form class="js-form">
+<section class="filter">
+  <h1 class="filter__title">Buscador de Cocktail</h1>
+  <form class="filter__form js-form">
     <input
-      class="main__filter--input js-input-name"
+      class="filter__form--input js-input-name"
       type="text"
       id="filter"
       placeholder="Ej.: Mojito, Margarita, Gin,..."
     />
-    <p class="main__error js-msg-error"></p>
 
-    <button class="main__btn js-button-search" type="submit">Buscar</button>
+    <button class="filter__form--btn js-button-search" type="submit">
+      Buscar
+    </button>
 
-    <button class="main__btn js-button-reset" type="reset">Borrar</button>
+    <button class="filter__form--btn js-button-reset" type="reset">
+      Borrar
+    </button>
+    <p class="filter__form--msgerror js-msg-error"></p>
   </form>
 </section>
