@@ -48,7 +48,8 @@ function getDrinks(event) {
         renderDrinksList(drinkDataList);
       })
       .catch((error) => {
-        console.error(`Ha sucedido un error: ${error}`);
+        // console.error(`Ha sucedido un error: ${error}`);
+        msgErrorSearch.innerHTML = `No hay ese dato`;
       });
   }
 }
@@ -116,6 +117,16 @@ function renderDrinksFavoriteList(listFavorites) {
   listDrinkFav.innerHTML = "";
   for (const drinkItemFav of listFavorites) {
     listDrinkFav.innerHTML += renderDrinkFavorite(drinkItemFav);
+  }
+
+  if (listFavorites.length > 0) {
+    //hay elementos en la lista de favoritos
+    //Añade la clase hiddenn al "p"
+    document.querySelector(".js-msg-fav").classList.add("hidden");
+    resetButtonFav.classList.remove("hidden");
+  } else {
+    document.querySelector(".js-msg-fav").classList.remove("hidden");
+    resetButtonFav.classList.add("hidden");
   }
 
   //Después recorrer la lista para escuchar el evento del boton delete
@@ -220,7 +231,7 @@ function getLocalStorage() {
     const arrayFavorites = JSON.parse(localStorageFavorites);
     // lo guardo en la variable global de favorites
     favorites = arrayFavorites;
-    // cada vez que modifico los arrays de palettes o de favorites vuelvo a pintar y a escuchar eventos
+    // cada vez que modifico los arrays del listado o de favorites vuelvo a pintar y a escuchar eventos
     renderDrinksList(drinkDataList);
     renderDrinksFavoriteList(favorites);
   }

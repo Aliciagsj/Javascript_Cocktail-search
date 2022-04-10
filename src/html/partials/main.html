@@ -6,19 +6,23 @@
         class="main__filter--input js-input-name"
         type="text"
         id="filter"
-        placeholder="Escribe aquí el nombre del cóctel"
+        placeholder="Ej.: Mojito, Margarita, Gin,..."
       />
       <p class="main__error js-msg-error"></p>
-      <button class="main__btn js-button-search" type="button">Buscar</button>
-      <button class="main__btn js-button-reset" type="button">Borrar</button>
+
+      <button class="main__btn js-button-search" type="submit">Buscar</button>
+
+      <button class="main__btn js-button-reset" type="reset">Borrar</button>
     </form>
   </section>
 
   <section class="lists">
     <article class="lists__fav js-list-favdrinks">
       <h2 class="lists__title">Cócteles favoritos</h2>
+      <p class="msg-fav js-msg-fav">No hay resultados que mostrar</p>
       <ul class="lists__list--fav js-list-fav"></ul>
-      <button class="main__btn js-reset-fav">Borrar</button>
+
+      <button class="main__btn js-reset-fav hidden" type="reset">Borrar</button>
     </article>
     <article class="lists__list js-list-drinks">
       <h2 class="lists__title">Lista</h2>
