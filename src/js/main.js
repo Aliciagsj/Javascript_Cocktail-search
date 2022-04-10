@@ -49,7 +49,7 @@ function getDrinks(event) {
       })
       .catch((error) => {
         // console.error(`Ha sucedido un error: ${error}`);
-        msgErrorSearch.innerHTML = `Ese cocktail no lo tenemos en nuestra lista`;
+        msgErrorSearch.innerHTML = `Este cocktail no está en el listado`;
       });
   }
 }
