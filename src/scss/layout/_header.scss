@@ -1,5 +1,18 @@
-.page__header {
+.header {
   display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 3rem;
+  justify-content:center;
+  align-items: center;
+
+  width: 100%;
+  height: 20vh;
+  background-image: url("../../assets/images/Background.png");
+  background-size:cover;
+  background-position: bottom;
+
+  &__img {
+    height: 70%;
+
+    
+  }
+
 }
