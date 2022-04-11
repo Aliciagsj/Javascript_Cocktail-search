@@ -1,8 +1,35 @@
-.page__footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100vw;
-  padding: 1rem;
-  color: $color-secondary;
+.footer{
+    height: 80px;
+    width: 100%;
+    background-color: black;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__copy{
+        color: $c-grey-m;
+        font-family: $font-main;
+        font-size: $Fontsize2;
+    }
+
+    &__rrss{
+        color: $c-grey-m;
+
+        &--link{
+            color: $c-grey-m;
+            height: $Fontsize2;            
+        }
+
+        &--icons{
+            padding-left: 0.5rem;
+        }
+
+    }
+
+
 }

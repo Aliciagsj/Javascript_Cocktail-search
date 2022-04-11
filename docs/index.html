@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Buscador de Cocktail</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+
+  <body>
+    <main class="main">
+      <section class="filter">
+        <article class="filter__header">
+          <img
+            class="filter__img"
+            src="./assets/images/logo-cocktailbar.png"
+            alt="Logo Cocktail Bar"
+          />
+          <h1 class="filter__title">Buscador de Cocktail</h1>
+        </article>
+        <form class="filter__form js-form">
+          <input
+            class="filter__form--input js-input-name"
+            type="text"
+            id="filter"
+            placeholder="Ej.: Mojito, Margarita, Gin,..."
+          />
+
+          <button class="filter__form--btn js-button-search" type="submit">
+            Buscar
+          </button>
+
+          <button class="filter__form--btn js-button-reset" type="reset">
+            Borrar
+          </button>
+          <p class="filter__form--msgerror js-msg-error"></p>
+        </form>
+      </section>
+
+      <section class="lists">
+        <article class="fav js-list-favdrinks">
+          <h2 class="fav__title">Cócteles favoritos</h2>
+          <p class="fav__msg js-msg-fav">Lista de favoritos vacía</p>
+          <ul class="fav__container js-list-fav"></ul>
+
+          <button class="fav__btnreset js-reset-fav hidden" type="reset">
+            Borrar
+          </button>
+        </article>
+
+        <article class="list js-list-drinks">
+          <h2 class="list__title">Lista</h2>
+          <ul class="list__container js-list"></ul>
+        </article>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <small class="footer__copy">© 2022 Alicia González</small>
+      <nav class="footer__rrss">
+        <a href="https://github.com/Aliciagsj" class="footer__rrss--link"
+          ><i class="footer__rrss--icons fab fa-github-square"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/alicia-gonz%C3%A1lez-san-juan/"
+          class="footer__rrss--link"
+          ><i class="footer__rrss--icons fab fa-linkedin"></i
+        ></a>
+        <a href="https://twitter.com/aliciagonsj" class="footer__rrss--link"
+          ><i class="footer__rrss--icons fab fa-twitter-square"></i
+        ></a>
+      </nav>
+    </footer>
+
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

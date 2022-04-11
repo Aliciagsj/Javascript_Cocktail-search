@@ -1,27 +1,4 @@
-<main class="page__main">
-  <h1 class="title">Buscador de Cócteles</h1>
-
-  <section class="filter">
-    <form class="js-form">
-      <input
-        class="filter__input js-input-name"
-        type="text"
-        id="filter"
-        placeholder="Escribe aquí el nombre del cóctel"
-      />
-      <button class="btn js-button-search">Buscar</button>
-      <button class="btn js-button-reset">Reset</button>
-      <p class="error js-msg-error"></p>
-    </form>
-  </section>
-
-  <section class="result__drink--fav js-list-favdrinks">
-    <h2>Cócteles favoritos</h2>
-
-    <ul class="list__fav js-list-fav"></ul>
-  </section>
-  <section class="result__drink js-list-drinks">
-    <h2>Lista</h2>
-    <ul class="list js-list"></ul>
-  </section>
+<main class="main">
+  <include src="./main-filter.html"></include>
+  <include src="./main-list.html"></include>
 </main>

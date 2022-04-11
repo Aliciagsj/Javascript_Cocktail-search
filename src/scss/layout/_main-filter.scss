@@ -1,0 +1,112 @@
+.filter {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  padding: 30px;
+
+  background-image: url("../../assets/images/Background.png");
+  background-size:cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+
+
+  &__header{
+      display: flex;
+      flex-direction: column;
+      justify-content:center;
+      align-items: center;
+
+  }
+
+  &__img {
+      height: 100px;
+      @include tablet {
+        height: 200px;
+      }
+  }
+
+
+    &__title {
+        font-family: $font-main;
+        font-size: $Headline;
+        font-weight: 900;
+        
+        color: $c-grey-m;
+        text-transform: uppercase;
+        margin: 10px 0px;
+        max-width: 400px;
+       text-align: center;
+
+       @include tablet {
+        max-width: 600px;
+       }
+
+    }
+
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include tablet {
+            flex-direction: row;
+          align-items: center;
+          margin-top: 30px;
+          margin-bottom: 30px;
+        }
+        
+        
+
+
+        &--input {
+            height: 50px;
+            width: 250px;
+            border: none;
+            border-radius: 5px;
+            border: 2px solid $c-grey-m;
+            background-color: $c-grey-d;
+            color: $c-grey-m;
+            font-size: 16px;
+            padding-left: 15px;
+
+            @include tablet {
+                width: 300px;
+
+            }
+        }
+
+        &--msgerror{
+            font-size: $Fontsize4;
+            color:$c-grey-m;
+        }
+
+        &--btn {
+          height: 40px;
+          width: 100px;
+          border-radius: 10px;
+          background-color:$c-grey-m;
+         
+          color: $c-grey-l;
+          font-size: 16px;
+          font-weight: bold;
+          margin-right: 10px;
+          margin-left: 10px;
+           margin-top: 20px;
+
+           @include tablet {
+            margin-left: 20px;
+            margin-top: 0;
+           }
+            
+
+
+        }
+
+    }
+
+
+}

@@ -1,6 +1,61 @@
-// fonts
+// Fonts
 $font-main: 'Roboto', sans-serif;
 
-// colors
-$color-bg: #f3f4f5;
-$color-secondary: #999;
+
+//Color
+$c-dark: black;
+
+$c-grey-l:#f3f3f3;
+$c-grey-m: #929292;
+$c-grey-d:#282828;
+
+$c-neon-blue:  #0965f2 ; 
+$c-neon-blue2: #2a9af6 ; 
+$c-neon-orange:#e77630;
+
+
+//Type scale
+$Headline: 2rem;//32px
+$Subheadline: 1.5rem;//24px
+$Fontsize1: 1.125rem;//18px
+$Fontsize2: 1rem;//16px
+$Fontsize3: 0.875rem; //14px
+$Fontsize4: 0.75rem; //12px
+$Fontsize5: 0.625rem; //10px
+$Fontsize6: 0.5rem; //8px
+
+//weight screens
+// $tablet: 768px;
+// $computer: 1200px;
+
+
+@mixin tablet {
+    @media all and (min-width: 768px) {
+      @content;
+    }
+  }
+  
+@mixin desktop {
+    @media all and (min-width: 1200px) {
+      @content;
+    }
+  }
+  
+
+
+
+.wrapper {
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 100%;
+  
+    @include tablet {
+      padding: 0 30px;
+    }
+    @include desktop {
+      // padding + desktop min-width
+      max-width: 1260px;
+    }
+  }
+
+  
