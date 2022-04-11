@@ -71,9 +71,9 @@ function renderDrink(drinkData) {
   }
 
   //Se pinta el coctail (drinkData)
-  const drink = `<li class="lists__list--drink ${classFav} js-drink-item" id="${drinkData.idDrink}">  
-  <img class="lists__list--img" src=${drinkData.strDrinkThumb} alt="Foto de ${drinkData.strDrink}" />
-  <p class="lists__list--name">${drinkData.strDrink}</p>
+  const drink = `<li class="list__container--item ${classFav} js-drink-item" id="${drinkData.idDrink}">  
+  <img class="list__container--img" src=${drinkData.strDrinkThumb} alt="Foto de ${drinkData.strDrink}" />
+  <p class="list__container--name">${drinkData.strDrink}</p>
  </li>`;
 
   return drink;
@@ -101,10 +101,10 @@ function renderDrinkFavorite(drinkDataFav) {
     drinkDataFav.strDrinkThumb = `https://via.placeholder.com/210x295/ffffff/666666/?text=drink`;
   }
 
-  const drinkFav = `<li class="lists__list--fav js-drink-fav" id="${drinkDataFav.idDrink}"> 
-  <img class="lists__list--img" src=${drinkDataFav.strDrinkThumb} alt="Foto de ${drinkDataFav.strDrink}" />
-  <p class="lists__list--name">${drinkDataFav.strDrink}</p>
-  <button class="btn-delete js-delete-fav" id="${drinkDataFav.idDrink}"><i class="icon fas fa-times"></i></button>
+  const drinkFav = `<li class="fav__container--item js-drink-fav" id="${drinkDataFav.idDrink}"> 
+  <img class="fav__container--img" src=${drinkDataFav.strDrinkThumb} alt="Foto de ${drinkDataFav.strDrink}" />
+  <p class="fav__container--name">${drinkDataFav.strDrink}</p>
+  <button class="fav__container--btndelete js-delete-fav" id="${drinkDataFav.idDrink}"><i class="icon fas fa-times"></i></button>
   </li>`;
 
   return drinkFav;
