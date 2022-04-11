@@ -36,7 +36,7 @@
         
         color: $c-grey-m;
         text-transform: uppercase;
-        margin-bottom: 20px;
+        margin: 10px 0px;
         max-width: 400px;
        text-align: center;
 
@@ -63,15 +63,8 @@
 
 
         &--input {
-            // width: 16rem;
-            // height: 2rem;
-            // border: 2px solid $c-grey-m;
-            // background-color: $c-grey-d;
-            // border-radius: 5%;
-            // padding: 2px 5px;
-
             height: 50px;
-            width: 300px;
+            width: 250px;
             border: none;
             border-radius: 5px;
             border: 2px solid $c-grey-m;
@@ -81,7 +74,7 @@
             padding-left: 15px;
 
             @include tablet {
-                width: 500px;
+                width: 300px;
 
             }
         }
@@ -92,17 +85,6 @@
         }
 
         &--btn {
-            // height: 1.5rem;
-            // width: 6rem;
-            // background-color: $c-grey-m;
-            // border-radius: 5px;
-            // text-align: center;
-            // color: $c-grey-l;
-            // font-family: $font-main;
-            // text-transform: uppercase;
-            // border: 0px;
-            // align-content: center;
-            // margin: 5px;
           height: 40px;
           width: 100px;
           border-radius: 10px;
